@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body
+        {
+            background-color: antiquewhite;
+            background-repeat: no-repeat;
+            background-size: 1600px 800px;
+
+        }
+        div{
+            width:150px;
+            background-color:rgba(5,222, 220, 0.1);
+
+            background-size: 200px;
+            border:1px solid #000000;
+            display:inline-block;
+            margin:10px;
+            font-family: "楷体";
+            color:#731412;
+            text-align:center;
+            padding:20px;
+            font-size:20px;
+            letter-spacing:5px;
+            border-radius:50%;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    var s = '绝代有佳人，幽居在空谷。白云良家子，零落依草木。'
+    for( var i=0 ; i<100; i++){
+        var divDom = document.createElement('div');
+        divDom.textContent = s;
+        divDom.onmouseover=function(){
+            var x=Math.floor(Math.random()* window.innerWidth);
+            var y=Math.floor(Math.random()* window.innerHeight);
+            this.style.left=x+'px';
+            this.style.top=y+'px';
+        }
+        randPositionDiv(divDom);
+        document.body.appendChild(divDom);
+    }
+    function randPositionDiv(dom){
+        var x=Math.floor(Math.random()*window.innerWidth);
+        var y=Math.floor(Math.random()*window.innerHeight);
+        dom.style.left=x+'px';
+        dom.style.top=y+'px';
+    }
+</script>
+</body>
+</html>
